@@ -59,7 +59,7 @@ I18nPlugin.prototype.apply = function(compiler) {
 		default:
 			return;
 		}
-		var result = localization ? localization(param) : defaultValue;
+		var result = localization ? localization.call(this, param) : defaultValue;
 		if(typeof result == "undefined") {
 			var error = this.state.module[__dirname];
 			if(!error) {
